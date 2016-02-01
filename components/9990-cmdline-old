@@ -241,6 +241,29 @@ Cmdline_old ()
 				UNIONTYPE="${_PARAMETER#union=}"
 				export UNIONTYPE
 				;;
+			vyatta-union=*)
+				# vyatta union boot for backwards compatible
+				LIVE_MEDIA_PATH="${_PARAMETER#vyatta-union=}"
+				PERSISTENCE_PATH="$LIVE_MEDIA_PATH/"
+				PERSISTENCE="true"
+				export LIVE_MEDIA_PATH PERSISTENCE_PATH PERSISTENCE
+				NONETWORKING="true"
+				export NONETWORKING
+                                UNIONTYPE="overlay"
+                                export UNIONTYPE
+				;;
+
+                        vyos-union=*)
+                                # vyos union boot
+                                LIVE_MEDIA_PATH="${_PARAMETER#vyos-union=}"
+                                PERSISTENCE_PATH="$LIVE_MEDIA_PATH/"
+                                PERSISTENCE="true"
+                                export LIVE_MEDIA_PATH PERSISTENCE_PATH PERSISTENCE
+                                NONETWORKING="true"
+                                export NONETWORKING
+                                UNIONTYPE="overlay"
+                                export UNIONTYPE
+                                ;;
 		esac
 	done
 
