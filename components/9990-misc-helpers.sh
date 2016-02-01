@@ -1409,7 +1409,7 @@ get_custom_mounts ()
 				fi
 			fi
 
-			full_source="$(trim_path ${backing}/${source})"
+			full_source="$(trim_path ${backing}/${LIVE_MEDIA_PATH}/${source})"
 			full_dest="$(trim_path ${rootmnt}/${dir})"
 			if [ -n "${opt_link}" ]
 			then
