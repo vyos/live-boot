@@ -1317,8 +1317,8 @@ do_union ()
 			# + a workdir to become mounted
 			# + workdir and upperdir to reside under the same mount
 			# + workdir and upperdir to be in separate directories
-			mkdir "${unionrw}/rw"
-			mkdir "${unionrw}/work"
+			mkdir -p "${unionrw}/rw"
+			mkdir -p "${unionrw}/work"
 			unionmountopts="-o noatime,lowerdir=${unionro},upperdir=${unionrw}/rw,workdir=${unionrw}/work"
 			;;
 	esac
