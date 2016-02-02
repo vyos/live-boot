@@ -140,6 +140,11 @@ Cmdline_old ()
 				export NFS_COW
 				;;
 
+			nofastboot)
+				NOFASTBOOT="true"
+				export NOFASTBOOT
+				;;
+
 			nofstab)
 				NOFSTAB="true"
 				export NOFSTAB

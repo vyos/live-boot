@@ -25,5 +25,10 @@ Fstab ()
 		echo "tmpfs /tmp tmpfs nosuid,nodev 0 0" >> /root/etc/fstab
 	fi
 
+	if [ -z "${NOFASTBOOT}" ]
+	then
+		touch root/fastboot
+	fi
+
 	log_end_msg
 }
