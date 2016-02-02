@@ -27,8 +27,8 @@ fi 2>/dev/null
 #	3) create live/"overlay" which may or maynot be on a non-volatile device
 #	   but is certainly read-write
 
-
-unioncfgpath="$(trim_path /root/lib/${VYOS_MOUNT}/${PERSISTENCE_PATH}/rw)"
+VYOS_MOUNT_DIR=`echo ${VYOS_MOUNT} | sed 's/live/mount/'`
+unioncfgpath="$(trim_path /root/lib/live/${VYOS_MOUNT_DIR}/${PERSISTENCE_PATH}/rw)"
 
 if [ -d /root/opt/vyatta/etc/config ]
 then
