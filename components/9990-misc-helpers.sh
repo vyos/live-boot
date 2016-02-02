@@ -1410,6 +1410,8 @@ get_custom_mounts ()
 			fi
 
 			full_source="$(trim_path ${backing}/${LIVE_MEDIA_PATH}/${source})"
+			VYOS_MOUNT="${backing}"
+			export VYOS_MOUNT
 			full_dest="$(trim_path ${rootmnt}/${dir})"
 			if [ -n "${opt_link}" ]
 			then

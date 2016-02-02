@@ -28,7 +28,7 @@ fi 2>/dev/null
 #	   but is certainly read-write
 
 
-unioncfgpath="$(trim_path /root/lib/live/mount/medium/${PERSISTENCE_PATH}/rw)"
+unioncfgpath="$(trim_path /root/lib/${VYOS_MOUNT}/${PERSISTENCE_PATH}/rw)"
 
 if [ -d /root/opt/vyatta/etc/config ]
 then
