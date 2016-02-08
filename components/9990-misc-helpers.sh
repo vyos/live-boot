@@ -709,7 +709,7 @@ mount_persistence_media ()
 		return 1
 	fi
 
-	backing="/live/persistence/$(basename ${device})"
+	backing="/live/persistence/"
 
 	mkdir -p "${backing}"
 	old_backing="$(where_is_mounted ${device})"
