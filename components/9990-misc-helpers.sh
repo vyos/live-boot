@@ -85,6 +85,9 @@ is_nice_device ()
 	elif echo ${sysfs_path} | grep -q "^/block/dm-"
 	then
 		return 0
+	elif echo ${sysfs_path} | grep -q "^/block/mmcblk"
+	then
+		return 0
 	elif echo ${sysfs_path} | grep -q "^/block/mtdblock"
 	then
 		return 0
