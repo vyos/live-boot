@@ -20,7 +20,7 @@ Vyos ()
 
 	if [ -d /root/opt/vyatta/etc/config ]
 	then
-		if [ -d ${unioncfgpath}/config
+		if [ -d ${unioncfgpath}/config ]
 		then
 			mount -o bind ${unioncfgpath}/config /root/opt/vyatta/etc/config
 		else
