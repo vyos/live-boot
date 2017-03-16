@@ -3,7 +3,9 @@
 # set -e
 
 Live ()
-{
+{	if [ -x /scripts/local-top/mdadm ]; then
+		/scripts/local-top/mdadm
+	fi
 	if [ -x /scripts/local-top/cryptroot ]
 	then
 		/scripts/local-top/cryptroot
