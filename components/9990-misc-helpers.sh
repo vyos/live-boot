@@ -712,6 +712,25 @@ mount_persistence_media ()
 		return 1
 	fi
 
+	fstype="$(get_fstype ${device})"
+	if [ "${fstype}" = "unknown" ]
+		return 1
+	fi
+
+	raid_drives=$(cat /proc/partitions | awk '{ if ($4!="name") { print $4 } }' \
+        	        | grep "md" | egrep -v "^$")
+
+	disks=()
+	for raid_drive in $raid_drives; do
+        	disks+=`ls /sys/block/$raid_drive/slaves`
+	done
+
+	for disk in ${disks[@]}; do
+	if [ "/dev/${disk}" = "${device}" ]
+		return 1
+	fi
+	done
+
 	backing="/live/persistence/"
 
 	mkdir -p "${backing}"
@@ -719,6 +738,10 @@ mount_persistence_media ()
 	if [ -z "${old_backing}" ]
 	then
 		fstype="$(get_fstype ${device})"
+		if [ "${fstype}" = "unknown" ]
+			return 1
+		fi
+
 		mount_opts="rw,noatime"
 		if [ -n "${PERSISTENCE_READONLY}" ]
 		then
