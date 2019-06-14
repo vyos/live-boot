@@ -714,6 +714,7 @@ mount_persistence_media ()
 
 	fstype="$(get_fstype ${device})"
 	if [ "${fstype}" = "unknown" ]
+        then
 		return 1
 	fi
 
@@ -727,6 +728,7 @@ mount_persistence_media ()
 
 	for disk in ${disks[@]}; do
 	if [ "/dev/${disk}" = "${device}" ]
+        then
 		return 1
 	fi
 	done
