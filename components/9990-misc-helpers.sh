@@ -721,16 +721,16 @@ mount_persistence_media ()
 	raid_drives=$(cat /proc/partitions | awk '{ if ($4!="name") { print $4 } }' \
         	        | grep "md" | egrep -v "^$")
 
-	disks=()
-	for raid_drive in $raid_drives; do
-        	disks+=`ls /sys/block/$raid_drive/slaves`
-	done
-
-	for disk in ${disks[@]}; do
-	if [ "/dev/${disk}" = "${device}" ]
-        then
-		return 1
-	fi
+	for raid_drive in $raid_drives
+	do
+        	disks=`ls /sys/block/$raid_drive/slaves`
+                for disk in ${disks}
+		do
+			if [ "/dev/${disk}" = "${device}" ]
+        		then
+				return 1
+			fi
+		done
 	done
 
 	backing="/live/persistence/"
