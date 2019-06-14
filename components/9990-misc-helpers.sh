@@ -739,11 +739,6 @@ mount_persistence_media ()
 	old_backing="$(where_is_mounted ${device})"
 	if [ -z "${old_backing}" ]
 	then
-		fstype="$(get_fstype ${device})"
-		if [ "${fstype}" = "unknown" ]
-			return 1
-		fi
-
 		mount_opts="rw,noatime"
 		if [ -n "${PERSISTENCE_READONLY}" ]
 		then
