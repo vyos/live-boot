@@ -719,15 +719,15 @@ mount_persistence_media ()
 	fi
 
 	raid_drives=$(cat /proc/partitions | awk '{ if ($4!="name") { print $4 } }' \
-        	        | grep "md" | egrep -v "^$")
+			| grep "md" | egrep -v "^$")
 
 	for raid_drive in $raid_drives
 	do
-        	disks=`ls /sys/block/$raid_drive/slaves`
-                for disk in ${disks}
+		disks=`ls /sys/block/$raid_drive/slaves`
+		for disk in ${disks}
 		do
 			if [ "/dev/${disk}" = "${device}" ]
-        		then
+			then
 				return 1
 			fi
 		done
