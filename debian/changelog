@@ -1,3 +1,10 @@
+live-boot (1:20151213-vyos0) UNRELEASED; urgency=medium
+
+  * Non-maintainer upload.
+  * Mark VyOS version
+
+ -- Christian Poessinger <christian@poessinger.com>  Mon, 21 Jun 2021 23:11:16 +0200
+
 live-boot (1:20151213) unstable; urgency=medium
 
   [ Iain R. Learmonth ]
