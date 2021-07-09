@@ -34,7 +34,7 @@ mkdir -p "${DESTDIR}/lib/live"
 cp -a /lib/live/boot "${DESTDIR}/lib/live"
 
 # klibc dependencies
-for FILE in /lib/*/libacl* /lib/*/libblkid* /lib/*/libuuid* /lib/*/libdevmapper* /lib/*/libattr*
+for FILE in /lib/*/libacl* /lib/*/libblkid* /lib/*/libuuid* /lib/*/libdevmapper* /lib/*/libattr* /lib/*/libpcre* 
 do
 	if [ ! -e "${DESTDIR}/${FILE}" ] && ls "${FILE}" > /dev/null 2>&1
 	then
