@@ -27,7 +27,7 @@ Fstab ()
 
 	if ! grep -qs "^tmpfs /var/tmp" /root/etc/fstab
 	then
-		echo "tmpfs /var/tmp tmpfs nosuid,nodev,size=25M 0 0" >> /root/etc/fstab
+		echo "tmpfs /var/tmp tmpfs nosuid,nodev 0 0" >> /root/etc/fstab
 	fi
 
 	if [ -z "${NOFASTBOOT}" ]
