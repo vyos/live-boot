@@ -194,8 +194,6 @@ Live ()
 
 	Swap
 
-	Vyos
-
 	exec 1>&6 6>&-
 	exec 2>&7 7>&-
 	kill ${tailpid}
