@@ -1,3 +1,11 @@
+live-boot (1:20151213.vyos1) unstable; urgency=medium
+
+  [ John Estabrook ]
+  * drop components/9990-vyos.sh
+  * normalize version string
+
+ -- John Estabrook <jestabro@vyos.io>  Tue, 17 Mar 2026 15:15:29 -0500
+
 live-boot (1:20151213-vyos0) UNRELEASED; urgency=medium
 
   * Non-maintainer upload.
