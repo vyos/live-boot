@@ -46,7 +46,3 @@ Mirror twin: `VyOS-Networks/live-boot`. Canonical side is here. Mirror pipeline 
 
 - Long-term plan (per README): retire this fork. Don't add features here that could equally live in `vyos-build`'s chroot overlay.
 - Any change touching `components/9990-vyos.sh` affects boot-time config mount on every VyOS install — coordinate with `vyos-1x` config-loading code.
-
----
-
-This file is mirrored on Confluence: [`vyos/live-boot`](https://internal.confluence.vyos.com/wiki/spaces/VYOS/pages/818053227). The Confluence page also carries the per-repo audit data (settings, workflows, secret counts, hygiene) that complements this CLAUDE.md. Edit either side; resync via the documentation pipeline.
