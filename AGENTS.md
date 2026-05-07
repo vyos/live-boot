@@ -30,17 +30,13 @@ dpkg-buildpackage -us -uc
 
 ## Cross-repo context
 
-Pre-dep of the live ISO. Consumed by `vyos/vyos-live-build` (the `live-build` fork) which is in turn consumed by `vyos/vyos-build` for ISO assembly. Listed in `VyOS-Networks/vyos-build-packages/repos.toml`. README explicitly notes the long-term goal of dropping this fork in favour of upstream Debian `live-build` plus added files in the `vyos-build` chroot.
+Pre-dep of the live ISO. Consumed by `vyos/vyos-live-build` (the `live-build` fork) which is in turn consumed by `vyos/vyos-build` for ISO assembly. Listed in an internal repository. README explicitly notes the long-term goal of dropping this fork in favour of upstream Debian `live-build` plus added files in the `vyos-build` chroot.
 
 ## Conventions
 
 - Default branch `current`. LTS branches `sagitta`/`circinus`/`equuleus` for backports.
 - Commit / PR title format: `component: T12345: description` (Phorge task ID at https://vyos.dev) — enforced via `vyos/.github` reusables (see workflows below).
-- Active workflows: `cla-check.yml`, `pr-mirror-repo-sync.yml`, `trigger-rebuild-repo-package.yml`. So this repo IS wired into the mirror pipeline (sends PRs to `VyOS-Networks/live-boot`) and the rebuild-dispatch chain (notifies `vyos-build-packages` to rebuild on merge).
-
-## Mirror relationship
-
-Mirror twin: `VyOS-Networks/live-boot`. Canonical side is here. Mirror pipeline is **active** — merges to `current` propagate via `pr-mirror-repo-sync.yml`.
+- Active workflows: `cla-check.yml`, `pr-mirror-repo-sync.yml`, `trigger-rebuild-repo-package.yml`. So this repo IS wired into the mirror pipeline (sends PRs to an internal repository) and the rebuild-dispatch chain (notifies `vyos-build-packages` to rebuild on merge).
 
 ## Notes for future contributors
 
