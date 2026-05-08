@@ -2,7 +2,7 @@
 
 ## Project purpose
 
-VyOS fork of Debian's `live-boot` — the initramfs/boot scripts that bring up a Debian Live system. The VyOS extensions mount the VyOS config directories during system startup (see `components/9990-vyos.sh`). Required for the entire VyOS image to boot, even on 1.4. Ships Debian packages `live-boot`, `live-boot-doc`, `live-boot-initramfs-tools`.
+VyOS fork of Debian's `live-boot` — the initramfs/boot scripts that bring up a Debian Live system. The VyOS extensions mount the VyOS config directories during system startup (see `components/9990-vyos.sh`). Required for the entire VyOS image to boot. Ships Debian packages `live-boot`, `live-boot-doc`, `live-boot-initramfs-tools`.
 
 ## Tech stack
 
