@@ -34,7 +34,7 @@ Pre-dep of the live ISO. Consumed by `vyos/vyos-live-build` (the `live-build` fo
 
 ## Conventions
 
-- Default branch `current`. LTS branches `sagitta`/`circinus`/`equuleus` for backports.
+- Default branch `rolling`. LTS branches `sagitta`/`circinus`/`equuleus` for backports.
 - Commit / PR title format: `component: T12345: description` (Phorge task ID at https://vyos.dev) — enforced via `vyos/.github` reusables (see workflows below).
 - Active workflows: `cla-check.yml`, `pr-mirror-repo-sync.yml`, `trigger-rebuild-repo-package.yml`. So this repo IS wired into the mirror pipeline (sends PRs to an internal repository) and the rebuild-dispatch chain (notifies `vyos-build-packages` to rebuild on merge).
 
